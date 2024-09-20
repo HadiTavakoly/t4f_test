@@ -5,6 +5,7 @@ import 'package:shimmer/shimmer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:t4f_test/controller/controller.dart';
+import 'package:t4f_test/view/details.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -115,14 +116,14 @@ class Home extends StatelessWidget {
                           itemBuilder: (context, index, realIndex) {
                             return GestureDetector(
                               onTap: () {
-                                // Get.to(
-                                //   duration: const Duration(seconds: 1),
-                                //   () => Details(
-                                //     product: homeController.products![index],
-                                //   ),
-                                // );
-                                // homeController.saveProductId(
-                                //     homeController.products![index].id);
+                                Get.to(
+                                  duration: const Duration(seconds: 1),
+                                  () => Details(
+                                    product: homeController.products![index],
+                                  ),
+                                );
+                                homeController.saveProductId(
+                                    homeController.products![index].id);
                               },
                               child: Hero(
                                 tag: homeController.products![index].id,
